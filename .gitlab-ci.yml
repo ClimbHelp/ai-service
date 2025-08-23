@@ -71,6 +71,9 @@ deploy-staging:
       echo "- Image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
       echo "- Port: 3002"
       echo "- Environnement: staging"
+      echo "- URL: https://climbhelp.gitlab.io/ai-service/staging"
+      echo "- Commit: $CI_COMMIT_SHORT_SHA"
+      echo "- Branch: $CI_COMMIT_REF_NAME"
   environment:
     name: staging
     url: https://climbhelp.gitlab.io/ai-service/staging
@@ -91,6 +94,9 @@ deploy-production:
       echo "- Image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
       echo "- Port: 3002"
       echo "- Environnement: production"
+      echo "- URL: https://climbhelp.gitlab.io/ai-service/production"
+      echo "- Commit: $CI_COMMIT_SHORT_SHA"
+      echo "- Branch: $CI_COMMIT_REF_NAME"
   environment:
     name: production
     url: https://climbhelp.gitlab.io/ai-service/production
