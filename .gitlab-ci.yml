@@ -20,9 +20,11 @@ test:
   image: node:18-alpine
   variables:
     NODE_ENV: test
-  script:
+    OPENAI_API_KEY: "sk-test-key-for-testing-only"
+  before_script:
     - npm ci
-    - npm run test
+  script:
+    - npm run test:coverage
   artifacts:
     reports:
       coverage_report:
