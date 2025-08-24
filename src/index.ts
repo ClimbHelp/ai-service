@@ -20,6 +20,12 @@ app.get("/health", (req: Request, res: Response) => {
   return res.json({ status: "OK", service: "ai-service" });
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+// Export pour Vercel serverless
+module.exports = app;
+
+// Démarrage du serveur seulement en développement
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+}
